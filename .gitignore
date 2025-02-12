@@ -1,3 +1,4 @@
 .venv
-/*.kml
+*.kml
 /*.ipynb
+!Umbra-Open-Data-Tracker.kml

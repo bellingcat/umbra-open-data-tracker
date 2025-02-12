@@ -5,7 +5,7 @@
         <NetworkLink>
             <name>Umbra Open Data Catalogue</name>
             <refreshVisibility>0</refreshVisibility>
-            <flyToView>0</flyToView>
+            <flyToView>1</flyToView>
             <Link>
                 <href>https://bellingcat.github.io/umbra-open-data-tracker/footprints.kml</href>
             </Link>

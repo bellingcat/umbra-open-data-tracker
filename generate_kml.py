@@ -64,8 +64,23 @@ for item in all_metadata:
 # Sort the footprints by date and then name
 footprints.sort(key=lambda x: (x["date"], x["name"]))
 
+# Extract min and max dates
+min_date = footprints[0]["date"]
+max_date = footprints[-1]["date"]
+
 # Create a kml file with the polygons and TimeStamps
 kml = simplekml.Kml()
+
+# Add a look at in a NetworkLinkControl to the kml file
+kml.networklinkcontrol.lookat=simplekml.LookAt(
+        latitude=34.415764,
+        longitude=-119.695236,
+        altitude=11000000,
+        tilt=0,
+        heading=0,
+        altitudemode='absolute',
+        gxtimespan=simplekml.GxTimeSpan(begin=min_date, end=max_date)
+    )
 
 sharedstyle = simplekml.Style()
 sharedstyle.iconstyle.icon.href = 'http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png'
